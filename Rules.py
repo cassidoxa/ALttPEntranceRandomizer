@@ -485,6 +485,7 @@ def inverted_rules(world, player):
     world.get_region('Hyrule Castle Ledge', player).can_reach_private = lambda state: (state.has_Mirror(player) and state.has('Beat Agahnim 1', player) and state.can_reach_light_world(player)) or old_rule_castle_ledge(state)
 
     # overworld requirements 
+    set_rule(world.get_entrance('Ice Rod Cave', player), lambda state: state.has_Pearl(player))
     set_rule(world.get_location('Maze Race', player), lambda state: state.has_Pearl(player))
     set_rule(world.get_entrance('Mini Moldorm Cave', player), lambda state: state.has_Pearl(player))
     set_rule(world.get_entrance('Light Hype Fairy', player), lambda state: state.has_Pearl(player))
